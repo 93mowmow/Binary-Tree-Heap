@@ -117,10 +117,13 @@ void BTHeap::perculateUp(Node *p, Node *n)
 
 Node* BTHeap::levelDown(Node *t)
 {
+	Node *ret;
 	if(t->left != NULL)
-		levelDown(t->left);
+		ret = levelDown(t->left);
 	else
-		return t;
+		ret = t;
+	
+	return ret;
 }
 
 void BTHeap::retrieve()
@@ -137,10 +140,13 @@ void BTHeap::retrieve()
 
 Node* BTHeap::levelDownRight(Node *t)
 {
+	Node *ret;
 	if(t->right != NULL)
-		levelDown(t->right);
+		ret = levelDown(t->right);
 	else
-		return t;
+		ret = t;
+	
+	return ret;
 }
 
 void BTHeap::remove()

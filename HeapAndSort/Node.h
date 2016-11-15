@@ -4,7 +4,7 @@
 //
 //Author: Eric Liang
 //Website: http://www.eric-liang.com
-
+#include <iostream>
 #pragma once
 class Node
 {

@@ -9,7 +9,7 @@
 Node::Node(int d)
 {
 	data = d;
-	parent = '\0';
-	right = '\0';
-	left = '\0';
+	parent = NULL;
+	right = NULL;
+	left = NULL;
 }
