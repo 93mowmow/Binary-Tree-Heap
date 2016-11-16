@@ -295,3 +295,12 @@ void BTHeap::HeapSort()
 		remove();
 	}
 }
+
+void BTHeap::inorderTraversal(Node *Tree) // LVR
+{
+	if( Tree ==  NULL ) return;  // Empty tree?
+	inorderTraversal(Tree->left);  // Traversal the left sub-tree
+	//printf("%d,",Tree->data);    // Traversal current node
+	cout << Tree->data << "," ;
+	inorderTraversal(Tree->right); // Traversal the right sub-tree
+} // end of function inorderTraversal
