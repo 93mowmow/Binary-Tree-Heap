@@ -25,3 +25,10 @@ HeapSort()
 Challenge:
 
 How to do reassignment of last node if the new last node will be the left major subtree's right most node...
+
+
+-------------
+
+2016/11/17 by Yi-Mao Hsiao
+
+Resolve the BUGs of remove() & insert() functions.
