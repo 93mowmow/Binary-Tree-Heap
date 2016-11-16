@@ -58,6 +58,11 @@ int main()
 	cout << "CURRENT ROOT: "; 
 	heapTree.retrieve();
 	heapTree.remove();
+	
+	cout << "InorderTraversal: " ;
+	heapTree.inorderTraversal(heapTree.root);
+	cout << endl;
+	
 	cout << "NEW ROOT AFTER REMOVAL: ";
 	heapTree.retrieve();
 	cout << endl;
@@ -80,22 +85,61 @@ int main()
 	heapTree.inorderTraversal(heapTree.root);
 	cout << endl;
 	
+	heapTree.retrieve();
+		heapTree.remove();		
+	cout << "InorderTraversal: " ;
+	heapTree.inorderTraversal(heapTree.root);
+	cout << endl;
+	
+	heapTree.retrieve();
+		heapTree.remove();
+	
+	cout << "InorderTraversal: " ;
+	heapTree.inorderTraversal(heapTree.root);
+	cout << endl;
+	
+	heapTree.retrieve();
+		heapTree.remove();
+
+	cout << "InorderTraversal: " ;
+	heapTree.inorderTraversal(heapTree.root);
+	cout << endl;
+	
 		heapTree.retrieve();
 		heapTree.remove();
+	
+	cout << "InorderTraversal: " ;
+	heapTree.inorderTraversal(heapTree.root);
+	cout << endl;
+	
 	heapTree.retrieve();
 		heapTree.remove();
-	heapTree.retrieve();
+
+	cout << "InorderTraversal: " ;
+	heapTree.inorderTraversal(heapTree.root);
+	cout << endl;
+	
+		heapTree.retrieve();
 		heapTree.remove();
-	heapTree.retrieve();
+
+	cout << "InorderTraversal: " ;
+	heapTree.inorderTraversal(heapTree.root);
+	cout << endl;
+	
+		heapTree.retrieve();
 		heapTree.remove();
-	heapTree.retrieve();
+
+	cout << "InorderTraversal: " ;
+	heapTree.inorderTraversal(heapTree.root);
+	cout << endl;
+	
+		heapTree.retrieve();
 		heapTree.remove();
-	heapTree.retrieve();
-		heapTree.remove();
-	heapTree.retrieve();
-		heapTree.remove();
-	heapTree.retrieve();
-		heapTree.remove();
+	
+	cout << "InorderTraversal: " ;
+	heapTree.inorderTraversal(heapTree.root);
+	cout << endl;
+	
 	heapTree.retrieve();
 		heapTree.remove();
 

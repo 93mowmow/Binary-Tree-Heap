@@ -13,6 +13,8 @@ class BTHeap
 public:
 	Node * root;
 	Node * last;
+	int no_of_nodes;
+	
 	BTHeap(Node*);
 	bool empty();
 	void perculateUp(Node *p, Node *n);

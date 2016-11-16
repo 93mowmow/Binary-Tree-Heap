@@ -13,10 +13,11 @@ using namespace std;
 BTHeap::BTHeap(Node* r)
 {	
 	root = r;
+	no_of_nodes = 0;
 }
 bool BTHeap::empty()
 {
-	if (root == '\0')
+	if (root == NULL)
 		return true;
 	else
 		return false;
@@ -101,6 +102,8 @@ void BTHeap::insert(Node*r, Node *n)
 			}
 		}
 	}
+	
+	no_of_nodes++;
 }
 
 void BTHeap::perculateUp(Node *p, Node *n)
@@ -142,7 +145,7 @@ Node* BTHeap::levelDownRight(Node *t)
 {
 	Node *ret;
 	if(t->right != NULL)
-		ret = levelDown(t->right);
+		ret = levelDownRight(t->right);
 	else
 		ret = t;
 	
@@ -151,6 +154,7 @@ Node* BTHeap::levelDownRight(Node *t)
 
 void BTHeap::remove()
 {
+	int i = 0;
 	if(root != last)
 	{
 		Node *tempLast;
@@ -170,14 +174,21 @@ void BTHeap::remove()
 			temp = last->data;
 			last->data = root->data;
 			root->data = temp;
-			last = NULL;
-			last = tempLast;
 			if(root->left->data > root->data)
 			{
 				temp = root->left->data;
 				root->left->data = root->data;
 				root->data = temp;
 			}
+			
+			Node *leftMostNode = levelDown(tempLast);
+			tempLast = leftMostNode;
+
+			last->parent->right = NULL;
+			
+			last = NULL;
+			last = tempLast;
+			
 		}
 		else
 		{
@@ -210,25 +221,38 @@ void BTHeap::remove()
 						{//must go up one level's last item as tempLast
 							//travel down right
 							Node *rLast = levelDownRight(root);
-							tempLast = rLast;
+							if(rLast != root)
+								tempLast = rLast;
+							else
+								tempLast = last->parent;
 						}
 					}
 					else
 					{
-						tempLast = last->parent->parent->left->right;
+						if(last->parent->parent->left->right != NULL)
+							tempLast = last->parent->parent->left->right;
+						else
+							tempLast = last->parent->parent->left;
 					}
 				}
 			}
 			else //R child
 			{//no need to jump out
-				tempLast = last->parent->left;
+				Node *leftMostNode = levelDown(last->parent);
+			    tempLast = leftMostNode;
 			}
 
 			//END
+			if(last->parent->right == last)
+				last->parent->right = NULL;
+			else if(last->parent->left == last)
+				last->parent->left = NULL;
+				
 			last = NULL;
 			last = tempLast;
-
-			perculateDown(root);
+			
+			for(i=0;i<no_of_nodes;i++)
+				perculateDown(root);
 		}
 	}
 	else //Root Remains
@@ -236,6 +260,8 @@ void BTHeap::remove()
 		root = NULL;
 		last = NULL;
 	}
+	
+	no_of_nodes--;
 }
 
 void BTHeap::perculateDown(Node *p)
