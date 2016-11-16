@@ -41,9 +41,7 @@ int main()
 
 	//Display Purposes
 	cout << "Data Used: 1  3  5  7  9  8  6  4  2  1000  10" << endl << endl;
-    cout << "InorderTraversal: " ;
-	heapTree.inorderTraversal(heapTree.root);
-	cout << endl;
+
 	//EMPTY CHECK
 	if(heapTree.empty())
 		cout << "HEAP STATUS: EMPTY" << endl << endl;
@@ -58,11 +56,6 @@ int main()
 	cout << "CURRENT ROOT: "; 
 	heapTree.retrieve();
 	heapTree.remove();
-	
-	cout << "InorderTraversal: " ;
-	heapTree.inorderTraversal(heapTree.root);
-	cout << endl;
-	
 	cout << "NEW ROOT AFTER REMOVAL: ";
 	heapTree.retrieve();
 	cout << endl;
@@ -73,18 +66,8 @@ int main()
 
 	heapTree.retrieve();
 		heapTree.remove();
-	
-	cout << "InorderTraversal: " ;
-	heapTree.inorderTraversal(heapTree.root);
-	cout << endl;
-	
 	heapTree.retrieve();
 		heapTree.remove();
-	
-	cout << "InorderTraversal: " ;
-	heapTree.inorderTraversal(heapTree.root);
-	cout << endl;
-	
 	heapTree.retrieve();
 		heapTree.remove();
 	heapTree.retrieve();

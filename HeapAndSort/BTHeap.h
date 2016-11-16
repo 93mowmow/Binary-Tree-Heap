@@ -23,5 +23,4 @@ public:
 	Node* levelDownRight(Node *n);
 	void remove();
 	void HeapSort();
-	void inorderTraversal(Node *Tree);
 };
