@@ -16,7 +16,7 @@ BTHeap::BTHeap(Node* r)
 }
 bool BTHeap::empty()
 {
-	if (root == '\0')
+	if (root == NULL)
 		return true;
 	else
 		return false;
@@ -164,7 +164,7 @@ void BTHeap::remove()
 			last = NULL;
 			last = tempLast;
 		}
-		else if(root->right == last)
+		else if(root->right == last) // if root->left is NULL ?? what happen?
 		{
 			tempLast = root->left;
 			temp = last->data;
@@ -295,3 +295,12 @@ void BTHeap::HeapSort()
 		remove();
 	}
 }
+
+void BTHeap::inorderTraversal(Node *Tree) // LVR
+{
+	if( Tree ==  NULL ) return;  // Empty tree?
+	inorderTraversal(Tree->left);  // Traversal the left sub-tree
+	//printf("%d,",Tree->data);    // Traversal current node
+	cout << Tree->data << "," ;
+	inorderTraversal(Tree->right); // Traversal the right sub-tree
+} // end of function inorderTraversal
